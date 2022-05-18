@@ -6,7 +6,7 @@ name: Library One Work Flow
 on:
   push:
     branches:
-      - 'master'
+      - master
       - '!dontrun/**'
     paths:
       - 'libraryone/src/main/**'
