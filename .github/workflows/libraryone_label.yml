@@ -3,10 +3,16 @@ name: Library One Requires Label Work Flow
 
 on:
   push:
+    branches:
+      - master
+      - master2
     paths:
       - 'libraryone/src/main/**'
+
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - master2
     paths:
       - 'libraryone/src/main/**'
     types: [ labeled ]
@@ -15,7 +21,7 @@ on:
 
 jobs:
   build:
-    if: ${{ (contains(github.event.pull_request.labels.*.name, 'HELLO WORLD') || github.event_name == 'push') }}
+    if: ${{ (contains(github.event.pull_request.labels.*.name, 'HELLO WORLD') }}
     runs-on: ubuntu-latest
 
     steps:
