@@ -16,7 +16,7 @@ on:
       - master2
     paths:
       - 'libraryone/src/main/**'
-    types: [ labeled ]
+    types: [ labeled, opened, reopened, synchronize ]
 
   workflow_dispatch:
 

@@ -17,7 +17,7 @@ on:
       - master2
     paths:
       - 'librarytwo/src/main/**'
-    types: [ labeled ]
+    types: [ labeled, opened, reopened, synchronize ]
 
   workflow_dispatch:
 
