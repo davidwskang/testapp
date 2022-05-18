@@ -1,5 +1,6 @@
 package com.davidwskang.libraryone
 
 class One {
-	fun one() = "123 456123123123 809890890890 1111"
+	fun one() = "1111"
+	fun one1() = "1111"
 }
