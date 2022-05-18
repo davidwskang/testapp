@@ -6,6 +6,7 @@ on:
     branches:
       - master
       - master2
+      - '!norun/**'
     paths:
       - 'libraryone/src/main/**'
 
@@ -15,12 +16,14 @@ on:
       - master2
     paths:
       - 'libraryone/src/main/**'
+    types: [ labeled ]
 
-      # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  build:
+
+  build-library-one:
+    if: contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
     runs-on: ubuntu-latest
 
     steps:
