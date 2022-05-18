@@ -3,9 +3,8 @@ name: Library One Requires Label Work Flow
 
 on:
   push:
-    branches:
-      - master
-      - master2
+    branches-ignore:
+      - 'norun/*'
     paths:
       - 'libraryone/src/main/**'
 
