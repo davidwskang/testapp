@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Library Two Work Flow
+name: Library Two Requires Label Work Flow
 
 # Controls when the workflow will run
 on:
