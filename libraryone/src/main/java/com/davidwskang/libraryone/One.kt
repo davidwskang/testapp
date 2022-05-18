@@ -1,5 +1,5 @@
 package com.davidwskang.libraryone
 
 class One {
-	fun one() = "123 AAA 789"
+	fun one() = "123 AAA BBB"
 }
