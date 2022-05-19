@@ -24,7 +24,10 @@ on:
 jobs:
 
   build-library-two:
-    if: contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD') ||
+      github.event_name == 'push'
+
     runs-on: ubuntu-latest
 
     steps:
