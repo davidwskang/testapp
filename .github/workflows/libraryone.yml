@@ -23,7 +23,9 @@ on:
 jobs:
 
   build-library-one:
-    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+    if: |
+      github.event_name == 'push' ||
+      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
 
     runs-on: ubuntu-latest
 
