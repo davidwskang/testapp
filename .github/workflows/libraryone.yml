@@ -6,7 +6,6 @@ on:
     branches:
       - master
       - master2
-      - '!norun/**'
     paths:
       - 'libraryone/src/main/**'
 
@@ -16,7 +15,11 @@ on:
       - master2
     paths:
       - 'libraryone/src/main/**'
-    types: [ labeled, opened, reopened, synchronize ]
+    types:
+      - labeled
+      - opened
+      - reopened
+      - synchronize
 
   workflow_dispatch:
 

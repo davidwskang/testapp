@@ -4,11 +4,20 @@ name: App Work Flow
 
 on:
   push:
-    branches: [ master, master2 ]
+    branches:
+      - master
+      - master2
 
   pull_request:
-    branches: [ master, master2 ]
-    types: [ labeled, opened, reopened, synchronize ]
+    branches:
+      - master
+      - master2
+    types:
+      - labeled
+      - opened
+      - reopened
+      - synchronize
+
   workflow_dispatch:
 
 jobs:
