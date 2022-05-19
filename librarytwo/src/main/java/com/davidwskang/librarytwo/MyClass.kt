@@ -4,5 +4,6 @@ class MyClass {
 	val test = listOf(
 		"",
 		"",
+		"",
 	)
 }
