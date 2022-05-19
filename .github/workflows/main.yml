@@ -35,3 +35,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
+          echo | date
+          echo sleep 30
+          echo | date
