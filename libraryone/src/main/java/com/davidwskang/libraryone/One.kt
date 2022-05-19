@@ -6,4 +6,5 @@ class One {
 	fun one2() = "1111"
 	fun one3() = "1111"
 	fun one4() = "1111"
+	fun one5() = "1111"
 }
