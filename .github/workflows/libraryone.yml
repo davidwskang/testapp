@@ -24,12 +24,12 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: environment-${{ github.ref }}
+  group: ${{ github.job }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
 
-  build-library-one:    
+  build-library-one:
     if: |
       github.event_name == 'push' ||
       contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
