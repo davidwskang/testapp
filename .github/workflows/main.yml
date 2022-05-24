@@ -15,9 +15,7 @@ on:
       - master
       - master2
     types:
-      - labeled
-      - opened
-      - reopened
+      - ready_for_review
       - synchronize
 
   workflow_dispatch:
@@ -27,12 +25,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   build:
-    if: |
-      github.event_name == 'push' ||
-      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
-
     runs-on: ubuntu-latest
 
     steps:
