@@ -26,6 +26,9 @@ concurrency:
 
 jobs:
   build:
+    if: |
+      github.pull_request.draft == false
+
     runs-on: ubuntu-latest
 
     steps:
