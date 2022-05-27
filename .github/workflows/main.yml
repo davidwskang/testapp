@@ -37,4 +37,5 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "==>"
+          echo github.pull_request.draft == false
           echo "$GITHUB_CONTEXT"
