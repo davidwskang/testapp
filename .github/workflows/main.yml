@@ -18,7 +18,7 @@ on:
       - ready_for_review
       - synchronize
 
-  workflow_dispatch:
+#  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || '' }}
@@ -39,6 +39,7 @@ jobs:
           echo "==>"
           echo "$GITHUB_CONTEXT"
           echo $(date)
-          echo $(date)
+          exit 1
           sleep 30
           echo $(date)
+
