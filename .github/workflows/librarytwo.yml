@@ -17,10 +17,13 @@ on:
     paths:
       - 'librarytwo/src/main/**'
     types:
-      - labeled
-      - opened
-      - reopened
+      - ready_for_review
       - synchronize
+#    types:
+#      - labeled
+#      - opened
+#      - reopened
+#      - synchronize
 
   workflow_dispatch:
 
@@ -33,9 +36,11 @@ jobs:
   build-library-two:
     runs-on: ubuntu-latest
 
+#    if: |
+#      github.event_name == 'push' ||
+#      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
     if: |
-      github.event_name == 'push' ||
-      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+      github.event.pull_request.draft == false
 
     steps:
       - name: Dump GitHub context

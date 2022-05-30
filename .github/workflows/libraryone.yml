@@ -14,10 +14,12 @@ on:
       - master
       - master2
     types:
-      - labeled
-      - opened
-      - reopened
+      - ready_for_review
       - synchronize
+#      - labeled
+#      - opened
+#      - reopened
+#      - synchronize
     paths:
       - 'libraryone/src/main/**'
 
@@ -30,9 +32,12 @@ concurrency:
 jobs:
 
   build-library-one:
+#    if: |
+#      github.event_name == 'push' ||
+#      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+
     if: |
-      github.event_name == 'push' ||
-      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+      github.event.pull_request.draft == false
 
     runs-on: ubuntu-latest
 
