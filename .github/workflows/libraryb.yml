@@ -15,7 +15,7 @@ on:
     paths:
       - 'libraryb/src/main/**'
     types:
-      - ready_for_review
+      - opened
       - synchronize
 #    types:
 #      - labeled
