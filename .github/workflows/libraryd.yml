@@ -1,5 +1,4 @@
-
-name: Library One Work Flow
+name: Library D Work Flow
 
 on:
   push:
@@ -7,21 +6,22 @@ on:
       - master
       - master2
     paths:
-      - 'libraryone/src/main/**'
+      - 'libraryd/src/main/**'
 
   pull_request:
     branches:
       - master
       - master2
+    paths:
+      - 'libraryd/src/main/**'
     types:
       - ready_for_review
       - synchronize
-#      - labeled
-#      - opened
-#      - reopened
-#      - synchronize
-    paths:
-      - 'libraryone/src/main/**'
+  #    types:
+  #      - labeled
+  #      - opened
+  #      - reopened
+  #      - synchronize
 
   workflow_dispatch:
 
@@ -31,15 +31,14 @@ concurrency:
 
 jobs:
 
-  build-library-one:
-#    if: |
-#      github.event_name == 'push' ||
-#      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+  build-library-two:
+    runs-on: ubuntu-latest
 
+    #    if: |
+    #      github.event_name == 'push' ||
+    #      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
     if: |
       github.event.pull_request.draft == false
-
-    runs-on: ubuntu-latest
 
     steps:
       - name: Dump GitHub context

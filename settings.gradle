@@ -14,5 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "testapp"
 include ':app'
-include ':libraryone'
-include ':librarytwo'
+include ':librarya'
+include ':libraryb'
+include ':libraryc'
+include ':libraryd'

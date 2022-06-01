@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Library Two Work Flow
+name: Library A Work Flow
 
 on:
   push:
@@ -8,22 +6,21 @@ on:
       - master
       - master2
     paths:
-      - 'librarytwo/src/main/**'
+      - 'librarya/src/main/**'
 
   pull_request:
     branches:
       - master
       - master2
-    paths:
-      - 'librarytwo/src/main/**'
     types:
       - ready_for_review
       - synchronize
-#    types:
 #      - labeled
 #      - opened
 #      - reopened
 #      - synchronize
+    paths:
+      - 'librarya/src/main/**'
 
   workflow_dispatch:
 
@@ -33,14 +30,15 @@ concurrency:
 
 jobs:
 
-  build-library-two:
-    runs-on: ubuntu-latest
-
+  build-library-one:
 #    if: |
 #      github.event_name == 'push' ||
 #      contains(github.event.pull_request.labels.*.name, 'HELLO WORLD')
+
     if: |
       github.event.pull_request.draft == false
+
+    runs-on: ubuntu-latest
 
     steps:
       - name: Dump GitHub context
