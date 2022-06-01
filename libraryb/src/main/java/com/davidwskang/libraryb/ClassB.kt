@@ -1,6 +1,6 @@
 package com.davidwskang.libraryb
 
-class MyClass {
+class ClassB {
 	val test = listOf(
 		"",
 	)
