@@ -1,4 +1,4 @@
-package com.davidwskang.libraryone
+package com.davidwskang.librarya
 
 // Test comment 234
 class One {
