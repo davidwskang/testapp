@@ -22,6 +22,8 @@ on:
     paths:
       - 'librarya/src/main/**'
 
+  workflow_call:
+
   workflow_dispatch:
 
 concurrency:

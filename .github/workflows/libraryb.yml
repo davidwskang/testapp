@@ -22,7 +22,7 @@ on:
 #      - opened
 #      - reopened
 #      - synchronize
-
+  workflow_call:
   workflow_dispatch:
 
 concurrency:
