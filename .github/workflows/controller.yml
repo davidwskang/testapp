@@ -28,6 +28,8 @@ jobs:
 
   trigger-lib-a-workflow:
     needs: [ lib-a-check ]
+    if: |
+      {{ "" != "" }}
     uses: ./.github/workflows/librarya.yml
 
 #    steps:
