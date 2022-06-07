@@ -33,6 +33,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 20
+
       - name: goodbye B ...
         shell: bash
         run: |
@@ -41,7 +42,9 @@ jobs:
 
           chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
-      - uses: ./.github/workflows/libraryb.yml
+
+      - name: run-lib-b
+        uses: ./.github/workflows/libraryb.yml
 
 #          echo "mydiff = "
 #          cat mydiff
