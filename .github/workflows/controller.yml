@@ -24,7 +24,7 @@ jobs:
           git fetch origin master
           git diff --name-only origin/master...HEAD
 
-          chmod -x .github/scripts/goodbye.sh
+          chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
 
   lib-b-check:
@@ -39,7 +39,7 @@ jobs:
           git fetch origin master
           git diff --name-only origin/master...HEAD
 
-          chmod -x .github/scripts/goodbye.sh
+          chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
 
 #          echo "mydiff = "
