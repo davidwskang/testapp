@@ -12,17 +12,30 @@ jobs:
 #  controller2:
 #    uses: ./.github/workflows/libraryb.yml
 
-  runshell:
+  lib-a-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 20
-      - name: goodbye...
+      - name: goodbye A ...
         shell: bash
         run: |
           git fetch origin master
-          git diff origin/master...HEAD
+          git diff --name-only origin/master...HEAD
+
+  lib-b-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 20
+      - name: goodbye B ...
+        shell: bash
+        run: |
+          git fetch origin master
+          git diff --name-only origin/master...HEAD
+
 #          echo "mydiff = "
 #          cat mydiff
 #          git diff --name-only origin/master...${{ github.head_commit.id }} | sort -u
