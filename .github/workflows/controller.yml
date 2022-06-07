@@ -31,8 +31,9 @@ jobs:
     needs: [ lib-a-check ]
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        echo $GITHUB_ENV
+      - name: goodbye Z ...
+        run: |
+          echo $GITHUB_ENV
 #    uses: ./.github/workflows/librarya.yml
 
   trigger-lib-a-workflow:
