@@ -3,14 +3,14 @@ name: Controller YML
 on: [ push, pull_request ]
 
 jobs:
-#  controller1:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: ./.github/workflows/librarya.yml
+  #  controller1:
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - uses: actions/checkout@v2
+  #      - uses: ./.github/workflows/librarya.yml
 
-#  controller2:
-#    uses: ./.github/workflows/libraryb.yml
+  #  controller2:
+  #    uses: ./.github/workflows/libraryb.yml
 
   lib-a-check:
     runs-on: ubuntu-latest
@@ -27,6 +27,24 @@ jobs:
           ./.github/scripts/goodbye.sh
 
   trigger-lib-a-workflow:
+    needs: [ lib-a-check ]
+    if: |
+      github.event_name == 'nothing'
+    uses: ./.github/workflows/librarya.yml
+
+  trigger-lib-b-workflow:
+    needs: [ lib-a-check ]
+    if: |
+      github.event_name == 'nothing'
+    uses: ./.github/workflows/librarya.yml
+
+  trigger-lib-c-workflow:
+    needs: [ lib-a-check ]
+    if: |
+      github.event_name == 'nothing'
+    uses: ./.github/workflows/librarya.yml
+
+  trigger-lib-d-workflow:
     needs: [ lib-a-check ]
     if: |
       github.event_name == 'nothing'
