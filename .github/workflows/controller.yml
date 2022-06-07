@@ -25,7 +25,7 @@ jobs:
           git diff --name-only origin/master...HEAD
           chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
-        uses: ./.github/workflows/librarya.yml
+      - uses: ./.github/workflows/librarya.yml
 
   lib-b-check:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
 
           chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
-        uses: ./.github/workflows/libraryb.yml
+      - uses: ./.github/workflows/libraryb.yml
 
 #          echo "mydiff = "
 #          cat mydiff
