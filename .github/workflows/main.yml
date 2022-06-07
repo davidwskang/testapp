@@ -15,7 +15,8 @@ on:
       - master
       - master2
     types:
-      - ready_for_review
+      - opened
+      - reopened
       - synchronize
 
 #  workflow_dispatch:
