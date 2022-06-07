@@ -20,8 +20,8 @@ jobs:
         shell: bash
         run: |
           git fetch origin master
-          git diff origin/master...HEAD > mydiff
-          echo "mydiff = "
-          cat mydiff
+          git diff origin/master...HEAD
+#          echo "mydiff = "
+#          cat mydiff
 #          git diff --name-only origin/master...${{ github.head_commit.id }} | sort -u
 #          sh ./.github/scripts/goodbye.sh
