@@ -22,29 +22,30 @@ jobs:
         shell: bash
         run: |
           git fetch origin master
-          git diff --name-only origin/master...HEAD
-          chmod +x .github/scripts/goodbye.sh
-          ./.github/scripts/goodbye.sh
-      - uses: ./.github/workflows/librarya.yml
-
-  lib-b-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 20
-
-      - name: goodbye B ...
-        shell: bash
-        run: |
-          git fetch origin master
-          git diff --name-only origin/master...HEAD
-
+          git diff --name-only origin/master...HEAD > file.txt
           chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
 
-      - name: run-lib-b
-        uses: ./.github/workflows/libraryb.yml
+  trigger-lib-a-workflow:
+    needs: [ lib-a-check ]
+    uses: ./.github/workflows/librarya.yml
+
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 20
+#
+#      - name: goodbye B ...
+#        shell: bash
+#        run: |
+#          git fetch origin master
+#          git diff --name-only origin/master...HEAD
+#
+#          chmod +x .github/scripts/goodbye.sh
+#          ./.github/scripts/goodbye.sh
+#
+#      - name: run-lib-b
+#        uses: ./.github/workflows/libraryb.yml
 
 #          echo "mydiff = "
 #          cat mydiff
