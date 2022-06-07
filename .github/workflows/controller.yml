@@ -24,6 +24,8 @@ jobs:
           git fetch origin master
           git diff --name-only origin/master...HEAD > file.txt
           cat file.txt
+          pwd
+          ls -l
           chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
 
@@ -35,6 +37,8 @@ jobs:
       - name: goodbye Z ...
         shell: bash
         run: |
+          pwd
+          ls
           cat file.txt
           rm file.txt
 #    uses: ./.github/workflows/librarya.yml
