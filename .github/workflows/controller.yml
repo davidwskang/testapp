@@ -23,6 +23,7 @@ jobs:
         run: |
           git fetch origin master
           git diff --name-only origin/master...HEAD > file.txt
+          cat file.txt
           chmod +x .github/scripts/goodbye.sh
           ./.github/scripts/goodbye.sh
 
