@@ -5,18 +5,12 @@
 name: App Work Flow
 
 on:
-  push:
-    branches:
-      - master
-      - master2
-
   pull_request:
     branches:
       - master
       - master2
     types:
-      - opened
-      - reopened
+      - ready_for_review
       - synchronize
 
 #  workflow_dispatch:
