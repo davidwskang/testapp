@@ -6,6 +6,7 @@ class ClassA {
 		val test = listOf(
 			"2",
 			"2",
+			"2",
 		)
 	}
 }
