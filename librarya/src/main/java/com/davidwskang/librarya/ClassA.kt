@@ -5,6 +5,12 @@ class ClassA {
 	fun one() {
 		val test = listOf(
 			"2",
+			"2",
+			"2",
+			"2",
+			"2",
+			"2",
+			"2",
 		)
 	}
 }
