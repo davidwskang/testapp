@@ -40,5 +40,6 @@ class FirstFragment : Fragment() {
 		super.onDestroyView()
 		_binding = null
 		_binding = null
+		_binding = null
 	}
 }
