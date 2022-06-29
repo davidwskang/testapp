@@ -24,7 +24,7 @@ jobs:
 
     if: |
       github.event.pull_request.draft == false &&
-      startsWith(github.event.head_ref, "testing/")
+      startsWith(github.event.head_ref, 'testing/')
 
     runs-on: ubuntu-latest
 
